@@ -26,6 +26,7 @@ class App extends Component {
     return (
       <main>
         <Navbar />
+        <Footer />
       </main>
     );
   }

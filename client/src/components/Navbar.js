@@ -1,14 +1,15 @@
 import React from "react";
+import "./Navbar.css";
 
 function Navbar() {
   return (
     <div>
       {" "}
-      <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
+      <nav className="navbar bg-light">
+        <div className="container-fluid">
+          <a className="navbar">
             <img
-              src="/docs/5.1/assets/brand/bootstrap-logo.svg"
+              src="https://www.logo-designer.co/wp-content/uploads/2019/12/2019-stock-market-company-ned-davis-research-new-logo-design-4.png"
               alt=""
               width="30"
               height="24"
@@ -16,6 +17,9 @@ function Navbar() {
             />
             Bootstrap
           </a>
+          <p>Login</p>
+          <p>Sign Up</p>
+          <p>Download APP</p>
         </div>
       </nav>
     </div>
