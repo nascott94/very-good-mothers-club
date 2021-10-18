@@ -1,9 +1,5 @@
 import React, { Component } from "react";
-import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/Footer/Footer";
-import Home from "./components/Home/Home";
-import About from "./components/About/About";
-import SignUp from "./components/SignUp/SignUp";
+import SignUp from "../src/components/SignUp/SignUp.js";
 
 class App extends Component {
   state = {
@@ -29,9 +25,7 @@ class App extends Component {
   render() {
     return (
       <main>
-        <Navbar />
         <SignUp />
-        <Footer />
       </main>
     );
   }
