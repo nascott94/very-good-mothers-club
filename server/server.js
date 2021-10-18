@@ -1,9 +1,13 @@
-//express
-const express = require("express");
-//mongo database
-const db = require("./config/connection");
-//sets up port
-const PORT = process.env.PORT || 3001;
+import express from "express";
+import bodyParser from "body-parser";
+import cors from "cors";
+import mongoose from "mongoose";
+
+app.use(bodyParser.json({ limit: "20md", extended: true }));
+app.use(bodyParser.urlencoded({ limit: "20md", extended: true }));
+
+app.use(cors());
+
 //express
 const app = express();
 
