@@ -15,22 +15,24 @@ export default function ShowUser() {
 
   return (
     <Container>
-      <Box
-        component="form"
-        sx={{
-          "& > :not(style)": { m: 1, width: "25ch" },
-        }}
-        noValidate
-        autoComplete="off"
-      >
-        <TextField id="outlined-name" label="Name" value={user.email} />
-        <TextField id="outlined-name" label="Name" value={name} />
-        <TextField
-          id="outlined-uncontrolled"
-          label="Uncontrolled"
-          defaultValue="foo"
-        />
-      </Box>
+      {userList.map((user, key) => (
+        <Box
+          component="form"
+          sx={{
+            "& > :not(style)": { m: 1, width: "25ch" },
+          }}
+          noValidate
+          autoComplete="off"
+        >
+          <TextField id="outlined-name" label="Name" />
+          <TextField id="outlined-name" label="Name" />
+          <TextField
+            id="outlined-uncontrolled"
+            label="Uncontrolled"
+            defaultValue="foo"
+          />
+        </Box>
+      ))}
     </Container>
   );
 }
