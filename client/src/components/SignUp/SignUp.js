@@ -64,12 +64,7 @@ export default function SignUp() {
           <Typography component="h1" variant="h5">
             Sign Up
           </Typography>
-          <Box
-            component="form"
-            onSubmit={handleSubmit}
-            noValidate
-            sx={{ mt: 1 }}
-          >
+          <Box component="form" noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
@@ -98,7 +93,7 @@ export default function SignUp() {
               fullWidth
               type="password"
               id="password"
-              label="password"
+              label="Password"
               value={user.password}
               onChange={(event) => {
                 setUser({ ...user, password: event.target.value });
@@ -108,8 +103,8 @@ export default function SignUp() {
               margin="normal"
               required
               fullWidth
-              type="password"
-              id="password"
+              type="retypePassword"
+              id="retypePassword"
               label="Re-Type Password"
               value={user.retypePassword}
               onChange={(event) => {

@@ -5,8 +5,14 @@ import mongoose from "mongoose";
 import userRoutes from "./routes/user.js";
 const app = express();
 
-app.use(bodyParser.json({ limit: "20md", extended: true }));
-app.use(bodyParser.urlencoded({ limit: "20md", extended: true }));
+app.use(bodyParser.json({ limit: "50mb" }));
+app.use(
+  bodyParser.urlencoded({
+    limit: "50mb",
+    extended: true,
+    parameterLimit: 50000,
+  })
+);
 
 app.use(cors());
 app.use("/user", userRoutes);
