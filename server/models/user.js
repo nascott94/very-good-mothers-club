@@ -14,8 +14,8 @@ const userSchema = mongoose.Schema({
     ],
   },
 
-  passWord: String,
-  passWordver: String,
+  password: String,
+  retypePassword: String,
   phoneNumber: Number,
 });
 
