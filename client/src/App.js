@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import SignUp from "../src/components/SignUp/SignUp.js";
+import Profile from "../src/components/Profile/Profile.js";
 
 class App extends Component {
   state = {
@@ -26,6 +27,7 @@ class App extends Component {
     return (
       <main>
         <SignUp />
+        <Profile />
       </main>
     );
   }
