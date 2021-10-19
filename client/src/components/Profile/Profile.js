@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from "react";
+import { styled } from "@mui/material/styles";
+import Grid from "@mui/material/Grid";
+import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import Container from "@mui/material/Container";
 import axios from "axios";
+
+const Item = styled(Paper)(({ theme }) => ({
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: "center",
+  color: theme.palette.text.secondary,
+}));
 
 export default function ShowUser() {
   const [userList, setUserList] = useState([]);
@@ -14,25 +22,28 @@ export default function ShowUser() {
   }, []);
 
   return (
-    <Container>
+    <Box sx={{ width: "100%" }}>
       {userList.map((user, key) => (
-        <Box
-          component="form"
-          sx={{
-            "& > :not(style)": { m: 1, width: "25ch" },
-          }}
-          noValidate
-          autoComplete="off"
+        <Grid
+          key={key}
+          container
+          rowSpacing={1}
+          columnSpacing={{ xs: 1, sm: 2, md: 3 }}
         >
-          <TextField id="outlined-name" label="Name" />
-          <TextField id="outlined-name" label="Name" />
-          <TextField
-            id="outlined-uncontrolled"
-            label="Uncontrolled"
-            defaultValue="foo"
-          />
-        </Box>
+          <Grid item xs={6}>
+            <Item>{user.email}</Item>
+          </Grid>
+          <Grid item xs={6}>
+            <Item>{user.phoneNumber}</Item>
+          </Grid>
+          <Grid item xs={6}>
+            <Item>{user.password}</Item>
+          </Grid>
+          <Grid item xs={6}>
+            <Item>{user.retypePassword}</Item>
+          </Grid>
+        </Grid>
       ))}
-    </Container>
+    </Box>
   );
 }
