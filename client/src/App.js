@@ -15,20 +15,20 @@ class App extends Component {
         <div className="flex-column justify-flex-start min-100-vh">
           <Navbar />
           <div className="container">
-            <Route exact path="/">
+            {/* <Route exact path="/">
               <Home />
-            </Route>
+            </Route> */}
             <Route exact path="/signup">
               <SignUp />
             </Route>
-            <Route exact path="/login">
+            {/* <Route exact path="/login">
               <Login />
-            </Route>
+            </Route> */}
             <Route exact path="/profile">
               <Profile />
             </Route>
           </div>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </Router>
     );
