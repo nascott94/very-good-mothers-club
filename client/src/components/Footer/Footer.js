@@ -1,50 +1,81 @@
-import * as React from "react";
-import BottomNavigation from "@mui/material/BottomNavigation";
-import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-import FolderIcon from "@mui/icons-material/Folder";
-import RestoreIcon from "@mui/icons-material/Restore";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
-import "./Footer.css";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
-  const [value, setValue] = React.useState("recents");
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
   const styles = {
     jazz: {
-      // padding: 10,
-      // bottom: 10,
-      // top: 25,
-      position: "sticky",
+      postion: "relative",
+    },
+    jazz2: {
+      position: "absolute",
+      bottom: 0,
+      background: "#A4A3A1",
     },
   };
-
   return (
-    <BottomNavigation style={styles.jazz} value={value} onChange={handleChange}>
-      <BottomNavigationAction
-        label="Recents"
-        value="recents"
-        icon={<RestoreIcon />}
-      />
-      <BottomNavigationAction
-        label="Favorites"
-        value="favorites"
-        icon={<FavoriteIcon />}
-      />
-      <BottomNavigationAction
-        label="Nearby"
-        value="nearby"
-        icon={<LocationOnIcon />}
-      />
-      <BottomNavigationAction
-        label="Folder"
-        value="folder"
-        icon={<FolderIcon />}
-      />
-    </BottomNavigation>
+    <footer>
+      <Box style={styles.jazz}>
+        <Container style={styles.jazz2} maxWidth="lg">
+          <Grid container spacing={5}>
+            <Grid item xs={12} sm={4}>
+              <Box borderBottom={1}>Help</Box>
+              <Box>
+                <Link href="/" colort="inherit">
+                  Contact
+                </Link>
+              </Box>
+              <Box>
+                <Link href="/" colort="inherit">
+                  Support
+                </Link>
+              </Box>
+              <Box>
+                <Link href="/" colort="inherit">
+                  Privacy
+                </Link>
+              </Box>
+            </Grid>
+            <Grid item xs={12} sm={4}>
+              <Box borderBottom={1}>Help</Box>
+              <Box>
+                <Link href="/" colort="inherit">
+                  Contact
+                </Link>
+              </Box>
+              <Box>
+                <Link href="/" colort="inherit">
+                  Support
+                </Link>
+              </Box>
+              <Box>
+                <Link href="/" colort="inherit">
+                  Privacy
+                </Link>
+              </Box>
+            </Grid>
+            <Grid item xs={12} sm={4}>
+              <Box borderBottom={1}>Help</Box>
+              <Box>
+                <Link href="/" colort="inherit">
+                  Contact
+                </Link>
+              </Box>
+              <Box>
+                <Link href="/" colort="inherit">
+                  Support
+                </Link>
+              </Box>
+              <Box>
+                <Link href="/" colort="inherit">
+                  Privacy
+                </Link>
+              </Box>
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
+    </footer>
   );
 }
